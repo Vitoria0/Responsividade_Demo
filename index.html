@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner e Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .banner {
+            height: 100vh;
+            width: 100vw;
+            background: url('https://plus.unsplash.com/premium_photo-1675257061662-28af51ceeaf2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-content {
+            width: 30%;
+            margin-left: 10%;
+            color: rgb(0, 0, 0);
+        }
+
+        .banner-content h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .banner-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .banner-content button {
+            padding: 10px 50px;
+            font-size: 1em;
+            background-color: #53ACFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            padding: 20px;
+            width: 75%;
+            margin-top: 3rem;
+        }
+
+        .grid-item {
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .grid-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .grid-item p {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #555;
+        }
+
+        .responsive-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+            background-color: #53ACFF;
+            margin-top: 4rem;
+        }
+
+        .responsive-footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: #53ACFF;
+            background-color: #FFF;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .responsive-footer h2 {
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+
+        }
+
+        .responsive-footer p {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .title-container p {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .title-container h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .responsive-item-container {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1rem;
+            color: white;
+            background-color: #53ACFF;
+        }
+
+        .responsive-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            color: white;
+            background-color: #53ACFF;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .chip {
+            background-color: white;
+            color: #53ACFF;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-content {
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            .banner {
+                align-items: center;
+                text-align: center;
+            }
+
+            .title-container {
+                width: 90%;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .responsive-item-container {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding: 1rem;
+                color: white;
+                background-color: #53ACFF;
+            }
+
+            .chip {
+                font-size: 1rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .banner {
+                background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+
+            }
+
+            .banner-content {
+                width: 30%;
+                margin-left: 15%;
+            }
+
+            .banner-content h1 {
+                font-size: 4rem;
+            }
+
+            .banner-content p {
+                font-size: 1.3rem;
+            }
+
+            .banner-content button {
+                font-size: 1.5em;
+            }
+
+            .grid-container {
+                width: 60%;
+            }
+
+            .grid-item p {
+                font-size: 1.2rem;
+                margin-top: 20px;
+            }
+
+            .grid-item h2 {
+                font-size: 2.8em;
+            }
+
+            .chip {
+                font-size: 1.5rem;
+            }
+
+            .description {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Diferenças entre AR e VR</h1>
+            <p>Você sabe qual a diferença entre a Realidade Aumentada e a Realidade Virtual? Apesar de terem nomes
+                parecidos e por vezes confundirem quem está começando nesse universo digital, a verdade é que ambas têm
+                funções diferentes. Mas, você sabe quais são?</p>
+            <button>INICIAR</button>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <h2>AR - O que é Realidade Aumentada?</h2>
+            <p>Em resumo, a Realidade Aumentada mescla elementos do universo real e do digital. Basicamente, a
+                tecnologia permite que usuário possa sobrepor e visualizar elementos digitais em um ambiente real.
+                Na prática, basta apontar a câmera do celular para o cômodo desejado e o objeto em 3D será sobreposto ao
+                seu cenário.</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://www.acidadeon.com/tudoep/wp-content/uploads/sites/10/2024/05/pokemon_2024-05-24_13-42-22_jpg_2024-05-24_13-42-23.webp"
+                alt="Imagem 1:2">
+        </div>
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?q=80&w=2224&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Imagem 2:1">
+        </div>
+        <div class="grid-item">
+            <h2>VR - O que é Realidade Virtual?</h2>
+            <p>Em resumo, a Realidade Aumentada mescla elementos do universo real e do digital. Basicamente, a
+                tecnologia permite que usuário possa sobrepor e visualizar elementos digitais em um ambiente real. 
+                Na prática, basta apontar a câmera do celular para o cômodo desejado e o objeto em 3D será sobreposto ao
+                seu cenário.</p>
+        </div>
+    </div>
+
+    <div class="responsive-container">
+        <div class="title-container">
+            <h2>Quais as principais diferenças?</h2>
+            <p>AR vs VR</p>
+        </div>
+
+        <div class="responsive-item-container">
+
+            <div class="responsive-item">
+                <p class="chip">Realidade Virtual</p>
+                <svg width="16" height="129" viewBox="0 0 16 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.29289 128.707C7.68342 129.098 8.31658 129.098 8.70711 128.707L15.0711 122.343C15.4616 121.953 15.4616 121.319 15.0711 120.929C14.6805 120.538 14.0474 120.538 13.6569 120.929L8 126.586L2.34315 120.929C1.95262 120.538 1.31946 120.538 0.928932 120.929C0.538408 121.319 0.538408 121.953 0.928932 122.343L7.29289 128.707ZM7 0L7 128H9L9 0L7 0Z"
+                        fill="white" />
+                </svg>
+                <p class="description">
+                    constrói o seu próprio mundo <br>100% digital e independente
+                </p>
+            </div>
+
+            <div class="responsive-item">
+                <p class="chip">Realidade Aumentada</p>
+                <svg width="16" height="129" viewBox="0 0 16 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.29289 128.707C7.68342 129.098 8.31658 129.098 8.70711 128.707L15.0711 122.343C15.4616 121.953 15.4616 121.319 15.0711 120.929C14.6805 120.538 14.0474 120.538 13.6569 120.929L8 126.586L2.34315 120.929C1.95262 120.538 1.31946 120.538 0.928932 120.929C0.538408 121.319 0.538408 121.953 0.928932 122.343L7.29289 128.707ZM7 0L7 128H9L9 0L7 0Z"
+                        fill="white" />
+                </svg>
+                <p class="description">
+                    utiliza do mundo real para <br> incluir apenas objetos virtuais.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-footer">
+        <h2>Quer ter acesso ao conteúdo completo desse curso?</h2>
+        <p>Entre em contato com um especialista!</p>
+    </div>
+</body>
+
+</html>
